@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {
@@ -8,11 +8,17 @@ class App extends React.Component {
 
   render() {
     return (
-      <Link to="/">
+      <Router>        
         <div>
-          <h1>Reduxstagram</h1>
+          <Link to="/">
+            <h1>Reduxstagram</h1>
+          </Link>
         </div>
-      </Link>
+          
+        {/* {React.cloneElement(this.props.children, this.props)} */}
+        {/* 1st arg = the component being cloned. 2nd arg = the props passed*/}
+        
+      </Router>
     )
   }
 };
